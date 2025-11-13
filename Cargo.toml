@@ -1,0 +1,21 @@
+[package]
+name = "libmariadb-sys"
+version = "0.1.0"
+authors = ["barsdeveloper <barsdeveloper@gmail.com>"]
+edition = "2024"
+description = "Native bindings to the libmariadb library"
+documentation = "https://docs.rs/libmariadb-sys/latest"
+repository = "https://github.com/TankHQ/libmariadb-sys"
+license = "Apache-2.0"
+keywords = ["bindings", "mariadb", "mysql", "libmariadb"]
+categories = ["external-ffi-bindings", "database"]
+build = "build.rs"
+
+[features]
+bundled = ["cc"]
+
+[build-dependencies]
+bindgen = { version = "0", features = ["runtime"] }
+cc = { version = "1", features = ["parallel"], optional = true }
+cmake = "0"
+
