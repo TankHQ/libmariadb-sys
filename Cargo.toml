@@ -13,9 +13,10 @@ build = "build.rs"
 
 [features]
 bundled = ["cc"]
+buildtime-bindgen = ["dep:bindgen"]
 
 [build-dependencies]
-bindgen = { version = "0", features = ["runtime"] }
+bindgen = { version = "0", features = ["runtime"], optional = true }
 cc = { version = "1", features = ["parallel"], optional = true }
 cmake = "0"
 
