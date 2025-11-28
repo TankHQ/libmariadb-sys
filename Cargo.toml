@@ -9,11 +9,17 @@ repository = "https://github.com/TankHQ/libmariadb-sys"
 license = "Apache-2.0"
 keywords = ["bindings", "mariadb", "mysql", "libmariadb"]
 categories = ["external-ffi-bindings", "database"]
+links = "mariadbclient"
 build = "build.rs"
 
 [features]
-bundled = ["cc"]
 buildtime-bindgen = ["dep:bindgen"]
+bundled = ["cc"]
+dynamic = []
+with-asan = []
+with-msan = []
+with-tsan = []
+with-ubsan = []
 
 [build-dependencies]
 bindgen = { version = "0", features = ["runtime"], optional = true }
